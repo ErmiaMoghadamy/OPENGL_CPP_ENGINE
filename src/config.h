@@ -1,5 +1,7 @@
+#pragma once
+
+#include <glad/glad.h>
 #include <GLFW/glfw3.h>
-#include <GL/gl.h>
 #include <iostream>
 
 #define WINDOW_WIDTH 1080
