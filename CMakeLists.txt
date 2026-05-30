@@ -10,6 +10,23 @@ set(ENGINE_SOURCES
 
 set(ENGINE_HEADERS
         src/config.h
+        src/App/App.cpp
+        src/App/App.h
+        src/App/Scene.cpp
+        src/App/Scene.h
+        src/Core/Vertex.h
+        src/Core/VertexBuffer.cpp
+        src/Core/VertexBuffer.h
+        src/Core/VertexArray.cpp
+        src/Core/VertexArray.h
+        src/Core/IndexBuffer.cpp
+        src/Core/IndexBuffer.h
+        src/Core/Mesh.cpp
+        src/Core/Mesh.h
+        src/App/Renderer.cpp
+        src/App/Renderer.h
+        src/Core/Shader.cpp
+        src/Core/Shader.h
 )
 
 # ---------------------------------------------------------------------------

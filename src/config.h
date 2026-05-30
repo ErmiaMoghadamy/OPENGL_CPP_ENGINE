@@ -3,6 +3,8 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
+#include <vector>
+#include <memory>
 
 #define WINDOW_WIDTH 1080
 #define WINDOW_HEIGHT 720
