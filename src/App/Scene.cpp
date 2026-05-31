@@ -1,6 +1,7 @@
 #include "Scene.h"
 #include "config.h"
-#include "Renderer.h"
+#include "../Core/Renderer.h"
+#include <glm/glm.hpp>
 
 std::vector<Vertex> vertices = {
     {
@@ -64,6 +65,8 @@ Scene::~Scene() = default;
 void Scene::boostrap() {
     m_ball_shader = std::make_unique<Shader>(vertexShader, fragmentShader);
     m_ball_mesh = std::make_unique<Mesh>(vertices, indices);
+
+
 }
 
 void Scene::run() {

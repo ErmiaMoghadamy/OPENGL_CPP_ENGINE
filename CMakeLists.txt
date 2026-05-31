@@ -23,8 +23,8 @@ set(ENGINE_HEADERS
         src/Core/IndexBuffer.h
         src/Core/Mesh.cpp
         src/Core/Mesh.h
-        src/App/Renderer.cpp
-        src/App/Renderer.h
+        src/Core/Renderer.cpp
+        src/Core/Renderer.h
         src/Core/Shader.cpp
         src/Core/Shader.h
 )
@@ -35,6 +35,7 @@ set(ENGINE_HEADERS
 # We treat GLAD as its own little internal library so it doesn't rot your src
 add_library(glad_lib STATIC deps/glad/src/glad.c)
 target_include_directories(glad_lib PUBLIC deps/glad/include)
+add_subdirectory(deps/glm)
 
 # ---------------------------------------------------------------------------
 # 3. MAIN TARGET
@@ -58,4 +59,5 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
         glad_lib
         glfw
         OpenGL::GL
+        glm
 )
