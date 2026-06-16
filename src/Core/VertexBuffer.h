@@ -11,5 +11,5 @@ public:
     void unbind() const;
 
 private:
-    unsigned int m_Id;
+    unsigned int m_Id = 0;
 };

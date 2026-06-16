@@ -1,5 +1,6 @@
 #include "Shader.h"
 #include "config.h"
+#include "glm/gtc/type_ptr.hpp"
 
 unsigned int CompileShader(unsigned int type, const char* source) {
     unsigned int shader = glCreateShader(type);
@@ -58,3 +59,37 @@ void Shader::unbind() const {
     glUseProgram(0);
 }
 
+int Shader::getLocation(const std::string& name)
+{
+    return glGetUniformLocation(m_Id, name.c_str());
+}
+
+void Shader::setInt(const std::string& name, int value)
+{
+    glUniform1i(getLocation(name), value);
+}
+
+void Shader::setFloat(const std::string& name, float value)
+{
+    glUniform1f(getLocation(name), value);
+}
+
+void Shader::setVec3(const std::string& name, const glm::vec3& value)
+{
+    glUniform3f(getLocation(name), value.x, value.y, value.z);
+}
+
+void Shader::setVec4(const std::string& name, const glm::vec4& value)
+{
+    glUniform4f(getLocation(name), value.x, value.y, value.z, value.w);
+}
+
+void Shader::setMat4(const std::string& name, const glm::mat4& value)
+{
+    glUniformMatrix4fv(
+        getLocation(name),
+        1,
+        GL_FALSE,
+        glm::value_ptr(value)
+    );
+}

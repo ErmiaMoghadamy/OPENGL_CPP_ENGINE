@@ -1,0 +1,11 @@
+R"glsl(
+#version 330 core
+
+out vec4 out_color;
+
+uniform vec4 u_light;
+
+void main() {
+    out_color = u_light;
+}
+)glsl"

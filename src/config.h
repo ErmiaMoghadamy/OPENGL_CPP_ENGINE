@@ -2,10 +2,8 @@
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 #include <iostream>
 #include <vector>
 #include <memory>
-
-#define WINDOW_WIDTH 1080
-#define WINDOW_HEIGHT 720
-#define WINDOW_TITLE "Balling Game"

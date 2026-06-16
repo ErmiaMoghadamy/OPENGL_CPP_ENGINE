@@ -27,6 +27,24 @@ set(ENGINE_HEADERS
         src/Core/Renderer.h
         src/Core/Shader.cpp
         src/Core/Shader.h
+        src/App/Camera.cpp
+        src/App/Camera.h
+        src/Entities/Ball.cpp
+        src/Entities/Ball.h
+        src/Core/Transform.cpp
+        src/Core/Transform.h
+        src/Entities/Entity.cpp
+        src/Entities/Entity.h
+        src/Core/Material.cpp
+        src/Core/Material.h
+        src/Entities/Floor.cpp
+        src/Entities/Floor.h
+        src/Core/Texture.cpp
+        src/Core/Texture.h
+        src/vendors/std_image.h
+        src/vendors/std_image.cpp
+        src/Entities/Lamp.cpp
+        src/Entities/Lamp.h
 )
 
 # ---------------------------------------------------------------------------
@@ -60,4 +78,12 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
         glfw
         OpenGL::GL
         glm
+)
+
+set(OUTPUT_DIR ${CMAKE_CURRENT_BINARY_DIR})
+
+add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_directory
+        ${CMAKE_SOURCE_DIR}/Assets
+        ${OUTPUT_DIR}/Assets
 )
